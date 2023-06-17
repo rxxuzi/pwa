@@ -8,7 +8,6 @@ function checkPassword() {
         if (un.value == "admin" && pw.value == "admin") {
         
             msg.innerHTML = "Login successful";
-            console.log("succ");
             
             fetch('https://api.ipify.org/?format=json')
             .then(response => response.json())
@@ -19,20 +18,21 @@ function checkPassword() {
 
                 var logData = "ip : " + ipAddress + ", time : " + currentTime + ", name : " + un.value ; //log書き込み用変数
                 
-                //ログイン情報をログファイルに追加
-                $.ajax({
-                    type: 'post', //サーバー（こっち側）にデータを送信
-                    url: './log.php', //phpのpath
-                    data: { logData: logData }, //dataタイプ
-                    //try.catch
-                    success: function(){
-                        //code
-                        login = true;
-                    },
-                    error:function(){
-                        alert('データの保存に失敗しました。');
-                    }
-                })
+                console.log(logData);
+                // //ログイン情報をログファイルに追加
+                // $.ajax({
+                //     type: 'post', //サーバー（こっち側）にデータを送信
+                //     url: './log.php', //phpのpath
+                //     data: { logData: logData }, //dataタイプ
+                //     //try.catch
+                //     success: function(){
+                //         //code
+                //         login = true;
+                //     },
+                //     error:function(){
+                //         alert('データの保存に失敗しました。');
+                //     }
+                // })
             })
             .catch(error => {
                 console.error('IPアドレスの取得中にエラーが発生しました:', error);
