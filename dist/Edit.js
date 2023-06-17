@@ -1,9 +1,11 @@
 "use strict";
+var tryCount = 0;
 $(function () {
-    $(document).on("click", "#idx", function (_event) {
+    $(document).on("click", "#idx", function () {
         var lb = document.getElementById('lb');
         if (lb != null) {
-            lb.innerHTML = "IDX";
+            tryCount++;
+            lb.innerHTML = "try : " + tryCount;
         }
         var NodeData = { name: '', lim: '' };
         NodeData["name"] = $(".name").val();
@@ -11,6 +13,7 @@ $(function () {
         NodeData["lim"] = $(".lim").val();
         ;
         save_data(NodeData);
+        load_json();
     });
 });
 function save_data(arg) {

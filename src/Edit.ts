@@ -1,17 +1,20 @@
+var tryCount = 0;
+
 /*
 ボタンを押したときに、nodedataにnameとvalueを代入する
 */
 $(function(){
-    $(document).on("click", "#idx", function(_event){    
+    $(document).on("click", "#idx", function(){    
         var lb = document.getElementById('lb');
         if(lb != null){
-            lb.innerHTML = "IDX";
+            tryCount ++;
+            lb.innerHTML = "try : " + tryCount;
         }
         var NodeData: { name: string, lim: string } = { name: '', lim: '' }; //nameとlimのindex=2の配列を作る
         NodeData["name"]  = $(".name").val() as string;; //.nameクラスから値参照
         NodeData["lim"] = $(".lim").val() as string;;//.limクラスから値参照
         save_data(NodeData);//save_dataにNodeDataを渡す
-        // load_json();//load_jsonを実行
+        load_json();//load_jsonを実行
     });
 });
 
@@ -23,7 +26,7 @@ function save_data(arg : { name: string; lim: string; }){
     $.ajax( {
         type: 'post', //サーバー（こっち側）にデータを送信
         url: './save.php', //phpのpath
-        data: arg, //dataタイプ
+        data: arg, //dataタイプ stringとstringの配列
         //try.catch
         success: function(){
         alert('データを保存しました。');

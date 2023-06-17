@@ -7,7 +7,7 @@ function checkPassword() {
             
                 msg.innerHTML = "Login successful";
                 
-                fetch('https://api.ipify.org/?format=json')
+                fetch('https://api.ipify.org/?format=json') //api取得
                 .then(response => response.json())
                 .then(data => {
                     var ipAddress = data.ip;
@@ -56,9 +56,9 @@ function save(logData: any) {
     })
 }
 
-var login = false;
+var login = false; //ログインできたかのフラグ
 var cnt = 0;
-var un = document.getElementById('username') as HTMLInputElement;
+var un = document.getElementById('username') as HTMLInputElement; //username
 var pw = document.getElementById('password') as HTMLInputElement;
 var msg = document.getElementById('msg');
 let checkButon = document.getElementById('chkBtn');
