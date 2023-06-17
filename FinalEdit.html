@@ -3,85 +3,42 @@
 <title>edit</title>
 <script src="./jquery-1.8.1.min.js"></script>
 <script src="jquery.validate.min.js"></script>
-<script>
-/*ƒ{ƒ^ƒ“‚ğ‰Ÿ‚µ‚½‚Æ‚«‚ÉAnodedata‚Éname‚Ævalue‚ğ‘ã“ü‚·‚é
-*/
-$(function(){
-    load_data();
-    $(document).on("click", "#idx", function(event){    
-        var NodeData = { name: '', lim: '' };
-        NodeData["name"] = $(".name").val(); //.nameƒNƒ‰ƒX‚©‚çQÆ
-        NodeData["lim"] = $(".lim").val();//.limƒNƒ‰ƒX‚©‚çQÆ
-        save_data(NodeData);//save_data‚ÉNodeData‚ğ“n‚·
-    });
-});
-/*‘‚«‚İ—pŠÖ”
-*/
-function save_data(arg){
-    $.ajax({
-        type: 'post', //ƒT[ƒo[‚Éƒf[ƒ^‚ğ‘—M
-        url: './save.php',//‘ÎÛ‚Æ‚È‚éurl
-        data: arg,
-        //try.catch
-        success: function(){
-        alert('ƒf[ƒ^‚ğ•Û‘¶‚µ‚Ü‚µ‚½B');
-        },
-        error:function(){
-        alert('ƒf[ƒ^‚Ì•Û‘¶‚É¸”s‚µ‚Ü‚µ‚½B');
-        }
-    });
-}
-//“Ç‚İæ‚è—pŠÖ”
-function load_data(){
-$.ajax({
-    url: 'data.json',
-    cache : false,
-    dataType : 'json',
-    /*¬Œ÷‚µ‚½ê‡‚Ì—¬‚ê
-    ‚Ü‚¸jsonƒtƒ@ƒCƒ‹‚©‚çnameƒ^ƒO‚Ælimƒ^ƒO‚Ìvalue‚ğ”²‚«o‚·
-    */
-    success: function(data) {
-        $(".name").val(data["name"]);
-        $(".lim").val(data["lim"]);
-    
-    },
-    //ƒGƒ‰[‚ÉƒŠƒ[ƒh‚·‚é
-    error: function( data ) {
-        location.reload()
-    }
-});
-}
-
-</script>
 </head>
 <body>
+
     <form>
-    <table id="table" border="1">
-        <tr>
-        <td>NAME</td><td>LIMIT</td>
-        </tr>
-        <tr>
-        <td><input type="text" id="name" class="name" ></td>
-        <td><input type="number" id="lim" class="lim" ></td>
-        </tr>
-    </table>
+        <table id="table" border="1">
+            <tr>
+            <td>IP</td><td>NAME</td><td>TIME</td><td>VALUE</td><td>LIMIT</td><td>IMAGES</td>
+            </tr>
+            <tr>
+            <td>IPã®å–å¾—</td>
+            <td><input type="text" id="name" class="name" ></td>
+            <td>æ™‚åˆ»ã‚’æ‰€å¾—</td> <!--ã“ã“ã¯æ™‚åˆ»ã‚’æ‰€å¾—-->
+            <td>æ•°å€¤ã®å–å¾—</td> <!---ã“ã“ã¯ãƒ©ã‚ºãƒ‘ã‚¤ã‹ã‚‰ã¨ã£ã¦ãã‚‹-->
+            <td><input type="number" id="lim" class="lim" ></td>
+            <td>ç”»åƒã®ç¿’å¾—</td> 
+            </tr>
+        </table>
     </form>
-<p>
-    <input type="button" value="INPUT FORM" id="idx">
-</p>
-<p>
-    <label><input type="text" value="0" id="nText"></label>
-    <input type="button" value="Check" id="checkButton">
-</p>
-<p id="msg"></p>
-<script>
-    function buttonClick(){
-        msg.innerText = 'Your number is ' + nText.value ;
-    }
-    var nText = document.getElementById('nText');
-    let checkButon = document.getElementById('checkButton');
-    checkButton.addEventListener('click', buttonClick);
-</script>
-</table>
+
+    <p>
+        <input type="button" value="INPUT FORM" id="idx">
+    </p>
+
+    <p>
+        <label><input type="text" value="0" id="nText"></label>
+        <input type="button" value="Check" id="checkButton">
+    </p>
+    <p id="msg"></p>
+    <script>
+        function buttonClick(){
+            msg.innerText = 'Your number is ' + nText.value ;
+        }
+        var nText = document.getElementById('nText');
+        let checkButon = document.getElementById('checkButton');
+        checkButton.addEventListener('click', buttonClick);
+    </script>
+    </table>
 </body>
 </html>

@@ -5,37 +5,37 @@ $(function(){
 
 
 function load_data(){
-//時間を取得
-//現在時刻を取得
-const date = new Date();
-    const 
-        H = date.getHours(), //時
-        M = date.getMinutes(), //分
-        S = date.getSeconds(), //秒
-        MS = date.getMilliseconds();//ミリ秒
+    //時間を取得
+    //現在時刻を取得
+    const date = new Date();
+        const 
+            H = date.getHours(), //時
+            M = date.getMinutes(), //分
+            S = date.getSeconds(), //秒
+            MS = date.getMilliseconds();//ミリ秒
 
-$(".time").text(H + 'h' + M + 'min' + S +'.' + MS +'sec');
+    $(".time").text(H + 'h' + M + 'min' + S +'.' + MS +'sec');
 
-//valueとlimitの値を取得
-var val = 0;
-var lim = 0;
+    //valueとlimitの値を取得
+    var val = 0;
+    var lim = 0;
 
-//jsonから値を取得する関数
-m_limit();
-m_value();
-//小数点もok
-val = Number($(".val").text());
-lim = Number($(".lim").text());
+    //jsonから値を取得する関数
+    m_limit();
+    m_value();
+    //小数点もok
+    val = Number($(".val").text());
+    lim = Number($(".lim").text());
 
-var url = $('#index_png').attr("src");//画像のurlを取得する
-$('#index_png').attr("src" , url + '?v=${Math.random()}')//キャッシュ回避のためにurlを毎回変える
+    var url = $('#index_png').attr("src");//画像のurlを取得する
+    $('#index_png').attr("src" , url + '?v=${Math.random()}')//キャッシュ回避のためにurlを毎回変える
 
-//valueがlimitを超えたときにtr部分を赤くする
-if (val >= lim) {
-    $('#table_tr').css('background-color','red');
-}else{
-    $('#table_tr').css('background-color','');
-}
+    //valueがlimitを超えたときにtr部分を赤くする
+    if (val >= lim) {
+        $('#table_tr').css('background-color','red');
+    }else{
+        $('#table_tr').css('background-color','');
+    }
 
 
 }
