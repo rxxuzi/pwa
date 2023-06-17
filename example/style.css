@@ -1,0 +1,33 @@
+.ex1{
+    color: transparent;             /*文字を透明にする*/
+    background-clip: text;          /*背景を文字で切り抜く*/
+    background-image : linear-gradient( 45deg,
+        red,
+        orange,
+        yellow,
+        green,
+        aqua,
+        blue,
+        purple);
+}
+
+.flex{
+    display: flex;
+    justify-content: space-around;
+}
+
+img{
+    width: 30%;
+    height: 20%;
+    object-fit: cover;
+}
+
+.pic img{
+    object-position: right 100px bottom 30px;
+    border-radius: 20px 30px 50% 10%;
+}
+
+@keyframes slide { 
+    from { background-position: 0% 0%; } 
+    to { background-position: 100% 0%; }    /* 右から左へ移動するアニメーション */
+}
