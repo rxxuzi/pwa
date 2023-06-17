@@ -19,20 +19,9 @@ function checkPassword() {
                 var logData = "ip : " + ipAddress + ", time : " + currentTime + ", name : " + un.value ; //log書き込み用変数
                 
                 console.log(logData);
-                // //ログイン情報をログファイルに追加
-                // $.ajax({
-                //     type: 'post', //サーバー（こっち側）にデータを送信
-                //     url: './log.php', //phpのpath
-                //     data: { logData: logData }, //dataタイプ
-                //     //try.catch
-                //     success: function(){
-                //         //code
-                //         login = true;
-                //     },
-                //     error:function(){
-                //         alert('データの保存に失敗しました。');
-                //     }
-                // })
+                // save(logData); あとで直す
+                login = true;
+                
             })
             .catch(error => {
                 console.error('IPアドレスの取得中にエラーが発生しました:', error);
@@ -40,9 +29,32 @@ function checkPassword() {
 
         }else{
             cnt++;
+            login = false;
             msg.innerHTML = "Login failed";
         }
     }
+}
+
+/**
+ * @todo
+ * @param {保存したいデータ} logData 
+ */
+function save(logData) {
+    // ログイン情報をログファイルに追加
+    $.ajax({
+        type: 'post', //サーバー（こっち側）にデータを送信
+        url: './log.php', //phpのpath
+        data: logData, //dataタイプ
+        //try.catch
+        success: function(){
+            //code
+            console.log("success");
+            login = true;
+        },
+        error:function(){
+            alert('データの保存に失敗しました。');
+        }
+    })
 }
 
 var login = false;

@@ -6,7 +6,7 @@ $(function(){
         NodeData["name"]  = $(".name").val() as string;; //.nameクラスから参照
         NodeData["lim"] = $(".lim").val() as string;;//.limクラスから参照
         save_data(NodeData);//save_dataにNodeDataを渡す
-        load_json();//load_jsonを実行
+        // load_json();//load_jsonを実行
     });
 });
 

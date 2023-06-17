@@ -7,7 +7,6 @@ $(function () {
         NodeData["lim"] = $(".lim").val();
         ;
         save_data(NodeData);
-        load_json();
     });
 });
 function save_data(arg) {
