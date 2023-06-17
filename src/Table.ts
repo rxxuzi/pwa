@@ -42,7 +42,7 @@ if (val >= lim) {
 
 function m_limit(){
     $.ajax({
-    url: 'data.json',
+    url: './rsc/data.json',
     cache : false,
     dataType : 'json',
     /*成功した場合の流れ
@@ -56,6 +56,7 @@ function m_limit(){
     //エラー時にリロードする
     error: function( data ) {
         location.reload()
+        console.log(data);
     }
 });
 
@@ -65,7 +66,7 @@ function m_limit(){
 function m_value(){
     /* valueのjsonファイルを参照*/
 $.ajax({
-    url: 'value.json',
+    url: './rsc/value.json',
     cache : false,
     dataType : 'json',
     
@@ -76,6 +77,7 @@ $.ajax({
     //エラー時にリロードする (unused)
     error: function( data ) {
         location.reload()
+        console.log(data);
     }
 });
 }
