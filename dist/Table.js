@@ -23,7 +23,7 @@ function load_data() {
 }
 function m_limit() {
     $.ajax({
-        url: 'data.json',
+        url: './rsc/data.json',
         cache: false,
         dataType: 'json',
         success: function (data) {
@@ -39,7 +39,7 @@ function m_limit() {
 }
 function m_value() {
     $.ajax({
-        url: 'value.json',
+        url: './rsc/value.json',
         cache: false,
         dataType: 'json',
         success: function (data) {
