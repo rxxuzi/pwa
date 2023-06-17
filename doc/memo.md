@@ -64,3 +64,9 @@ jQuery.ajax({
 })
 
 ~~~
+
+## 504エラー
+
+ajaxを用いてphpにデータを投げようとしたら
+次のようなエラーが出た
+`Failed to load resource: the server responded with a status of 405 (Method Not Allowed)`

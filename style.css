@@ -1,0 +1,12 @@
+/* .ui0{
+    background-color: chartreuse;
+    width: 500px;
+} */
+
+.edit{
+    color: tomato;
+    display: block;
+    text-align: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 50px;
+}

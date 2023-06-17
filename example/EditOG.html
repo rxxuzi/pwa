@@ -1,0 +1,87 @@
+<html>
+<head>
+<title>edit</title>
+<script src="./jquery-1.8.1.min.js"></script>
+<script src="jquery.validate.min.js"></script>
+<script>
+/*ボタンを押したときに、nodedataにnameとvalueを代入する
+*/
+$(function(){
+    load_data();
+    $(document).on("click", "#idx", function(event){    
+        var NodeData = { name: '', lim: '' };
+        NodeData["name"] = $(".name").val(); //.nameクラスから参照
+        NodeData["lim"] = $(".lim").val();//.limクラスから参照
+        save_data(NodeData);//save_dataにNodeDataを渡す
+    });
+});
+/*書き込み用関数
+*/
+function save_data(arg){
+    $.ajax({
+        type: 'post', //サーバーにデータを送信
+        url: './save.php',//対象となるurl
+        data: arg,
+        //try.catch
+        success: function(){
+        alert('データを保存しました。');
+        },
+        error:function(){
+        alert('データの保存に失敗しました。');
+        }
+    });
+}
+//読み取り用関数
+function load_data(){
+$.ajax({
+    url: 'data.json',
+    cache : false,
+    dataType : 'json',
+    /*成功した場合の流れ
+    まずjsonファイルからnameタグとlimタグのvalueを抜き出す
+    */
+    success: function(data) {
+        $(".name").val(data["name"]);
+        $(".lim").val(data["lim"]);
+    
+    },
+    //エラー時にリロードする
+    error: function( data ) {
+        location.reload()
+    }
+});
+}
+
+</script>
+</head>
+<body>
+    <form>
+    <table id="table" border="1">
+        <tr>
+        <td>NAME</td><td>LIMIT</td>
+        </tr>
+        <tr>
+        <td><input type="text" id="name" class="name" ></td>
+        <td><input type="number" id="lim" class="lim" ></td>
+        </tr>
+    </table>
+    </form>
+<p>
+    <input type="button" value="INPUT FORM" id="idx">
+</p>
+<p>
+    <label><input type="text" value="0" id="nText"></label>
+    <input type="button" value="Check" id="checkButton">
+</p>
+<p id="msg"></p>
+<script>
+    function buttonClick(){
+        msg.innerText = 'Your number is ' + nText.value ;
+    }
+    var nText = document.getElementById('nText');
+    let checkButon = document.getElementById('checkButton');
+    checkButton.addEventListener('click', buttonClick);
+</script>
+</table>
+</body>
+</html>

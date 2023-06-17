@@ -4,9 +4,10 @@
     <script src="./rsc/jquery-1.8.1.min.js"></script>
     <!-- <script src="src/Edit.ts"></script> -->
     <script src="dist/Edit.js"></script>
+    <link href="./style.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-    <h1>This is Edit.html</h1>
+    <h1 class="edit">This is Edit.html</h1>
     <form>
         <table id="table" border="1">
             <tr>
@@ -25,15 +26,17 @@
 
     <p>
         <input type="button" value="INPUT FORM" id="idx">
+        <label id="lb" class="lb">Change : </label>
     </p>
-
-    <p>
-        <label><input type="text" value="" id="username"></label>
-        <label><input type="password" id="password"></label>
-        <input type="button" value="Check" id="chkBtn" onclick= "checkPassword()">
-    </p>
-    <p id="msg"></p>
-    <script src="src/pw.js"></script>
-    </table>
+    <div class="ui0">
+        <p>
+            <label><input type="text" value="" id="username"></label>
+            <label><input type="password" id="password"></label>
+            <input type="button" value="Check" id="chkBtn" onclick= "checkPassword()">
+        </p>
+        <p id="msg"></p>
+        <script src="src/pw.js"></script>
+    </div>
+    
 </body>
 </html>

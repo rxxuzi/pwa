@@ -1,10 +1,15 @@
-/*ボタンを押したときに、nodedataにnameとvalueを代入する
+/*
+ボタンを押したときに、nodedataにnameとvalueを代入する
 */
 $(function(){
     $(document).on("click", "#idx", function(_event){    
-        var NodeData: { name: string, lim: string } = { name: '', lim: '' };
-        NodeData["name"]  = $(".name").val() as string;; //.nameクラスから参照
-        NodeData["lim"] = $(".lim").val() as string;;//.limクラスから参照
+        var lb = document.getElementById('lb');
+        if(lb != null){
+            lb.innerHTML = "IDX";
+        }
+        var NodeData: { name: string, lim: string } = { name: '', lim: '' }; //nameとlimのindex=2の配列を作る
+        NodeData["name"]  = $(".name").val() as string;; //.nameクラスから値参照
+        NodeData["lim"] = $(".lim").val() as string;;//.limクラスから値参照
         save_data(NodeData);//save_dataにNodeDataを渡す
         // load_json();//load_jsonを実行
     });
@@ -13,7 +18,7 @@ $(function(){
 /*
 書き込み用関数
 */
-function save_data(arg: { name: string; lim: string; }){
+function save_data(arg : { name: string; lim: string; }){
     //ajaxはjsonはつかさどるライブラリ
     $.ajax( {
         type: 'post', //サーバー（こっち側）にデータを送信

@@ -1,6 +1,10 @@
 "use strict";
 $(function () {
     $(document).on("click", "#idx", function (_event) {
+        var lb = document.getElementById('lb');
+        if (lb != null) {
+            lb.innerHTML = "IDX";
+        }
         var NodeData = { name: '', lim: '' };
         NodeData["name"] = $(".name").val();
         ;

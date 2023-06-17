@@ -1,4 +1,8 @@
-
+/**
+ * index.htmlに現在の状況を載せる
+ * @author rxxuzi
+ * @version 1.0.0
+ */
 $(function(){
     load_data();
 });
@@ -14,7 +18,7 @@ function load_data(){
             S = date.getSeconds(), //秒
             MS = date.getMilliseconds();//ミリ秒
 
-    $(".time").text(H + 'h' + M + 'min' + S +'.' + MS +'sec');
+    $(".time").text(H + 'h' + M + 'min' + S +'.' + MS +'sec'); //合体
 
     //valueとlimitの値を取得
     var val = 0;
@@ -40,6 +44,8 @@ function load_data(){
 
 }
 
+//limitとnameを取得
+
 function m_limit(){
     $.ajax({
     url: './rsc/data.json',
@@ -63,7 +69,7 @@ function m_limit(){
 
 }
 
-
+//valueを取得
 function m_value(){
     /* valueのjsonファイルを参照*/
 $.ajax({
