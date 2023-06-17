@@ -17,8 +17,8 @@ function save_data(arg: { name: string; lim: string; }){
     //ajaxはjsonはつかさどるライブラリ
     $.ajax( {
         type: 'post', //サーバー（こっち側）にデータを送信
-        url: './save.php',
-        data: arg,
+        url: './save.php', //phpのpath
+        data: arg, //dataタイプ
         //try.catch
         success: function(){
         alert('データを保存しました。');
