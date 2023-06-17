@@ -41,7 +41,6 @@ function load_data(){
         $('#table_tr').css('background-color','');
     }
 
-
 }
 
 //limitとnameを取得
@@ -88,6 +87,7 @@ $.ajax({
     }
 });
 }
+
 //300ms毎永遠ループ
 var timer_id = setInterval( function () {
     load_data();
