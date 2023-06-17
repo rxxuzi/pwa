@@ -1,4 +1,4 @@
-import { data } from "jquery";
+"use strict";
 $(function () {
     $(document).on("click", "#idx", function (_event) {
         var NodeData = { name: '', lim: '' };
@@ -40,7 +40,7 @@ function load_json() {
         },
         error: function (_data) {
             location.reload();
-            console.log("reload" + data);
+            console.log("reload" + _data);
         }
     });
 }

@@ -1,5 +1,3 @@
-import { data } from "jquery";
-
 /*ボタンを押したときに、nodedataにnameとvalueを代入する
 */
 $(function(){
@@ -52,7 +50,7 @@ function load_json(){
         },
         error: function( _data ) {
             location.reload()
-            console.log("reload" + data);
+            console.log("reload" + _data);
         }
     });
 }
