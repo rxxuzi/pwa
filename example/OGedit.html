@@ -4,48 +4,48 @@
 <script src="./jquery-1.8.1.min.js"></script>
 <script src="jquery.validate.min.js"></script>
 <script>
-/*ƒ{ƒ^ƒ“‚ğ‰Ÿ‚µ‚½‚Æ‚«‚ÉAnodedata‚Éname‚Ævalue‚ğ‘ã“ü‚·‚é
+/*ãƒœã‚¿ãƒ³ã‚’æŠ¼ã—ãŸã¨ãã«ã€nodedataã«nameã¨valueã‚’ä»£å…¥ã™ã‚‹
 */
 $(function(){
     load_data();
     $(document).on("click", "#idx", function(event){    
         var NodeData = { name: '', lim: '' };
-        NodeData["name"] = $(".name").val(); //.nameƒNƒ‰ƒX‚©‚çQÆ
-        NodeData["lim"] = $(".lim").val();//.limƒNƒ‰ƒX‚©‚çQÆ
-        save_data(NodeData);//save_data‚ÉNodeData‚ğ“n‚·
+        NodeData["name"] = $(".name").val(); //.nameã‚¯ãƒ©ã‚¹ã‹ã‚‰å‚ç…§
+        NodeData["lim"] = $(".lim").val();//.limã‚¯ãƒ©ã‚¹ã‹ã‚‰å‚ç…§
+        save_data(NodeData);//save_dataã«NodeDataã‚’æ¸¡ã™
     });
 });
-/*‘‚«‚İ—pŠÖ”
+/*æ›¸ãè¾¼ã¿ç”¨é–¢æ•°
 */
 function save_data(arg){
     $.ajax({
-        type: 'post', //ƒT[ƒo[‚Éƒf[ƒ^‚ğ‘—M
-        url: './save.php',//‘ÎÛ‚Æ‚È‚éurl
+        type: 'post', //ã‚µãƒ¼ãƒãƒ¼ã«ãƒ‡ãƒ¼ã‚¿ã‚’é€ä¿¡
+        url: './save.php',//å¯¾è±¡ã¨ãªã‚‹url
         data: arg,
         //try.catch
         success: function(){
-        alert('ƒf[ƒ^‚ğ•Û‘¶‚µ‚Ü‚µ‚½B');
+        alert('ãƒ‡ãƒ¼ã‚¿ã‚’ä¿å­˜ã—ã¾ã—ãŸã€‚');
         },
         error:function(){
-        alert('ƒf[ƒ^‚Ì•Û‘¶‚É¸”s‚µ‚Ü‚µ‚½B');
+        alert('ãƒ‡ãƒ¼ã‚¿ã®ä¿å­˜ã«å¤±æ•—ã—ã¾ã—ãŸã€‚');
         }
     });
 }
-//“Ç‚İæ‚è—pŠÖ”
+//èª­ã¿å–ã‚Šç”¨é–¢æ•°
 function load_data(){
 $.ajax({
     url: 'data.json',
     cache : false,
     dataType : 'json',
-    /*¬Œ÷‚µ‚½ê‡‚Ì—¬‚ê
-    ‚Ü‚¸jsonƒtƒ@ƒCƒ‹‚©‚çnameƒ^ƒO‚Ælimƒ^ƒO‚Ìvalue‚ğ”²‚«o‚·
+    /*æˆåŠŸã—ãŸå ´åˆã®æµã‚Œ
+    ã¾ãšjsonãƒ•ã‚¡ã‚¤ãƒ«ã‹ã‚‰nameã‚¿ã‚°ã¨limã‚¿ã‚°ã®valueã‚’æŠœãå‡ºã™
     */
     success: function(data) {
         $(".name").val(data["name"]);
         $(".lim").val(data["lim"]);
     
     },
-    //ƒGƒ‰[‚ÉƒŠƒ[ƒh‚·‚é
+    //ã‚¨ãƒ©ãƒ¼æ™‚ã«ãƒªãƒ­ãƒ¼ãƒ‰ã™ã‚‹
     error: function( data ) {
         location.reload()
     }
