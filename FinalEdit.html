@@ -1,12 +1,13 @@
 <html>
 <head>
-<title>edit</title>
-<script src="./jquery-1.8.1.min.js"></script>
-<script src="jquery.validate.min.js"></script>
-<script src="src/Edit.ts"></script>
+    <title>edit</title>
+    <script src="./jquery-1.8.1.min.js"></script>
+    <script src="jquery.validate.min.js"></script>
+    <!-- <script src="src/Edit.ts"></script> -->
+    <script src="dist/Edit.js"></script>
 </head>
 <body>
-
+    <h1>This is Edit.html</h1>
     <form>
         <table id="table" border="1">
             <tr>
@@ -32,14 +33,7 @@
         <input type="button" value="Check" id="checkButton">
     </p>
     <p id="msg"></p>
-    <script>
-        function buttonClick(){
-            msg.innerText = 'Your number is ' + nText.value ;
-        }
-        var nText = document.getElementById('nText');
-        let checkButon = document.getElementById('checkButton');
-        checkButton.addEventListener('click', buttonClick);
-    </script>
+    <script src="src/pw.js"></script>
     </table>
 </body>
 </html>
