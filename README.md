@@ -1,3 +1,3 @@
 # PWA
 
-javascriptからTypeScriptへ移植
+javascriptからTypeScriptへ移植 
