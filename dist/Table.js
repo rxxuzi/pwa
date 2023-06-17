@@ -54,5 +54,5 @@ function m_value() {
 }
 var timer_id = setInterval(function () {
     load_data();
-}, 3000);
+}, 300);
 //# sourceMappingURL=Table.js.map

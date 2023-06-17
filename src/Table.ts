@@ -58,6 +58,7 @@ function m_limit(){
         location.reload()
         console.log(data);
     }
+
 });
 
 }
@@ -81,7 +82,7 @@ $.ajax({
     }
 });
 }
-//3000ms毎永遠ループ
+//300ms毎永遠ループ
 var timer_id = setInterval( function () {
     load_data();
-} , 3000);
+} , 300);
