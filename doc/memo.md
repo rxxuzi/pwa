@@ -60,9 +60,7 @@ Node.jsのfsモジュールを使用する場合、サーバーサイドでフ�
 jQuery.ajax({
     url: 'url', //参照url 例: './save.php'
     type: 'POST', //postかgetか
-    data: { //postするデータ
-     plugin: scope.id 
-    }
+    data: data //postするデータ
 })
 
 ~~~

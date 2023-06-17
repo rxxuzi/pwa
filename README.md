@@ -1,13 +1,17 @@
 # PWA
 
-javascriptからTypeScriptへ移植
+## My first PWA Project v1.0.1
 
-環境設定の方法は[doc](doc/)
+Extensions and libraries used
 
-リソースは[rsc](rsc/)
++ Node.js 18.16.0
++ jquery 1.8.1
 
-バックエンドは[src](src/)
+Documentation is available at this link : [doc](doc/)
 
+Resources at this link : [rsc](rsc/)
 
+Source code from this link : [src](src/)
 
-
+Repository of the original project :
+[experiment-pt1](https://github.com/rxxuzi/experiment-pt1)
