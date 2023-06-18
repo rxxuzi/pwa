@@ -1,11 +1,12 @@
 "use strict";
+const refreshInterval = 100;
 $(function () {
     load_data();
 });
 function load_data() {
     const date = new Date();
     const H = date.getHours(), M = date.getMinutes(), S = date.getSeconds(), MS = date.getMilliseconds();
-    $(".time").text(H + 'h' + M + 'min' + S + '.' + MS + 'sec');
+    $(".time").text(H + 'h' + M + 'min' + S + '.' + (MS % 10) + 'sec');
     var val = 0;
     var lim = 0;
     m_limit();
@@ -54,7 +55,8 @@ function m_value() {
 }
 var timer_id = setInterval(function () {
     load_data();
-}, 300);
+}, refreshInterval);
+var rows = [];
 function addRow() {
     var table = document.getElementById("table");
     var row = table.insertRow();
@@ -69,5 +71,6 @@ function addRow() {
     cell4.innerHTML = "Cell 4";
     cell4.innerHTML = "Cell 4";
     cell5.innerHTML = "Cell 5";
+    rows.push(row);
 }
 //# sourceMappingURL=Table.js.map

@@ -4,6 +4,8 @@
  * @version 1.0.0
  */
 
+const refreshInterval = 100;
+
 $(function(){
     load_data();
 });
@@ -19,7 +21,7 @@ function load_data(){
             S = date.getSeconds(), //秒
             MS = date.getMilliseconds();//ミリ秒
 
-    $(".time").text(H + 'h' + M + 'min' + S +'.' + MS +'sec'); //合体
+    $(".time").text(H + 'h' + M + 'min' + S +'.' + (MS%10) +'sec'); //合体
 
     //valueとlimitの値を取得
     var val = 0;
@@ -92,7 +94,9 @@ $.ajax({
 //300ms毎永遠ループ
 var timer_id = setInterval( function () {
     load_data();
-} , 300);
+} , refreshInterval);
+
+var rows = []; // 追加された行を保存する配列
 
 function addRow() {
     var table = document.getElementById("table") as HTMLTableElement;
@@ -109,4 +113,6 @@ function addRow() {
     cell4.innerHTML = "Cell 4";
     cell5.innerHTML = "Cell 5";
 
+    // 追加された行を配列に保存
+    rows.push(row);
 }
