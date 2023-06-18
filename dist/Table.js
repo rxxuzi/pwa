@@ -55,4 +55,19 @@ function m_value() {
 var timer_id = setInterval(function () {
     load_data();
 }, 300);
+function addRow() {
+    var table = document.getElementById("table");
+    var row = table.insertRow();
+    var cell1 = row.insertCell(0);
+    var cell2 = row.insertCell(1);
+    var cell3 = row.insertCell(2);
+    var cell4 = row.insertCell(3);
+    var cell5 = row.insertCell(4);
+    cell1.innerHTML = "Cell 1";
+    cell2.innerHTML = "Cell 2";
+    cell3.innerHTML = "Cell 3";
+    cell4.innerHTML = "Cell 4";
+    cell4.innerHTML = "Cell 4";
+    cell5.innerHTML = "Cell 5";
+}
 //# sourceMappingURL=Table.js.map

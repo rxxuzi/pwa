@@ -3,6 +3,7 @@
  * @author rxxuzi
  * @version 1.0.0
  */
+
 $(function(){
     load_data();
 });
@@ -28,7 +29,7 @@ function load_data(){
     m_limit();
     m_value();
     //小数点もok
-    val = Number($(".val").text());
+    val = Number($(".val").text()); //numberにキャスト
     lim = Number($(".lim").text());
 
     var url = $('#index_png').attr("src");//画像のurlを取得する
@@ -92,3 +93,20 @@ $.ajax({
 var timer_id = setInterval( function () {
     load_data();
 } , 300);
+
+function addRow() {
+    var table = document.getElementById("table") as HTMLTableElement;
+    var row = table.insertRow();
+    var cell1 = row.insertCell(0);
+    var cell2 = row.insertCell(1);
+    var cell3 = row.insertCell(2);
+    var cell4 = row.insertCell(3);
+    var cell5 = row.insertCell(4);
+    cell1.innerHTML = "Cell 1";
+    cell2.innerHTML = "Cell 2";
+    cell3.innerHTML = "Cell 3";
+    cell4.innerHTML = "Cell 4";
+    cell4.innerHTML = "Cell 4";
+    cell5.innerHTML = "Cell 5";
+
+}
