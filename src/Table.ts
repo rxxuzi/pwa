@@ -21,7 +21,7 @@ function load_data(){
             S = date.getSeconds(), //秒
             MS = date.getMilliseconds();//ミリ秒
 
-    $(".time").text(H + 'h' + M + 'min' + S +'.' + (MS%10) +'sec'); //合体
+    $(".time").text(H + 'h' + M + 'min' + S +'sec'); //合体
 
     //valueとlimitの値を取得
     var val = 0;
@@ -36,7 +36,7 @@ function load_data(){
 
     var url = $('#index_png').attr("src");//画像のurlを取得する
     $('#index_png').attr("src" , url + '?v=${Math.random()}')//キャッシュ回避のためにurlを毎回変える
-
+    
     //valueがlimitを超えたときにtr部分を赤くする
     if (val >= lim) {
         $('#table_tr').css('background-color','red');
