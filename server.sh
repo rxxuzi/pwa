@@ -9,10 +9,13 @@ cp -r pwa C:/Apache/Apache24/htdocs
 
 echo "Finish" >> DirCopy.log
 
-gcc ./src/run_sh.c
-a.exe
+g++ ./src/run.cpp -o run
+
+run.exe
+
 sleep 1
-rm a.exe
+
+rm -r run.exe
 
 # cd C:/Apache/Apache24/htdocs
 

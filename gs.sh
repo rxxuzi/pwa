@@ -1,5 +1,4 @@
 echo "Hello World"
-gcc ./src/run_sh.c
-a.exe
-sleep 1
-rm a.exe
+g++ ./src/run.cpp -o run
+run.exe
+rm -r run.exe
