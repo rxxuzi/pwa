@@ -2,9 +2,13 @@
 #   Apach内のhtdocsにこのディレクトリをコピーする
 #
 cd ..
-if [ ! -d "C:/Apache/Apache24/htdocs/ps" ]; 
-    then mkdir C:/Apache/Apache24/htdocs/ps
+
+echo "Dir Copy Start" 
+
+if [ ! -d "C:/Apache/Apache24/htdocs/pwa" ]; 
+    then rm -rf C:/Apache/Apache24/htdocs/pwa
 fi
+
 cp -r pwa C:/Apache/Apache24/htdocs
 
 echo "Finish" >> DirCopy.log

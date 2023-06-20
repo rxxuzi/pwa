@@ -22,10 +22,10 @@ function save_data(arg) {
         url: './src/save.php',
         data: arg,
         success: function () {
-            alert('データを保存しました。');
+            alert('Data saved.');
         },
         error: function () {
-            alert('データの保存に失敗しました。');
+            alert('Failed to save data.');
         }
     });
 }

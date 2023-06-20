@@ -29,10 +29,10 @@ function save_data(arg : { name: string; lim: string; }){
         data: arg, //dataタイプ stringとstringの配列
         //try.catch
         success: function(){
-        alert('データを保存しました。');
+        alert('Data saved.');
         },
         error:function(){
-        alert('データの保存に失敗しました。');
+        alert('Failed to save data.');
         }
     });
 }
