@@ -4,7 +4,7 @@
  * @version 1.0.0
  */
 
-const refreshInterval = 100;
+const refreshInterval = 1000;
 
 $(function(){
     load_data();

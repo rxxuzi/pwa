@@ -1,5 +1,5 @@
 "use strict";
-const refreshInterval = 100;
+const refreshInterval = 1000;
 $(function () {
     load_data();
 });
