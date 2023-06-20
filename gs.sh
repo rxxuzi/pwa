@@ -1,3 +1,5 @@
-
-date =`date +%Y-%m-%d`
-echo $dime >> date.log
+echo "Hello World"
+gcc ./src/run_sh.c
+a.exe
+sleep 1
+rm a.exe
