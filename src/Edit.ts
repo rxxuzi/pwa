@@ -25,7 +25,7 @@ function save_data(arg : { name: string; lim: string; }){
     //ajaxはjsonはつかさどるライブラリ
     $.ajax( {
         type: 'post', //サーバー（こっち側）にデータを送信
-        url: './save.php', //phpのpath
+        url: './src/save.php', //phpのpath
         data: arg, //dataタイプ stringとstringの配列
         //try.catch
         success: function(){
@@ -40,7 +40,7 @@ function save_data(arg : { name: string; lim: string; }){
 //読み取り用関数
 function load_json(){
     $.ajax({
-        url: './rsc/data.json',
+        url: './../rsc/data.json',
         cache : false,
         dataType : 'json',
         /*

@@ -21,7 +21,7 @@ function load_data(){
             S = date.getSeconds(), //秒
             MS = date.getMilliseconds();//ミリ秒
 
-    $(".time").text(H + 'h' + M + 'min' + S +'sec'); //合体
+    $(".time").text(H + 'h' + M + 'min' + S + Math.floor(MS/100) + 'sec'); //合体
 
     //valueとlimitの値を取得
     var val = 0;
@@ -50,7 +50,7 @@ function load_data(){
 
 function m_limit(){
     $.ajax({
-    url: './rsc/data.json',
+    url: './../rsc/data.json',
     cache : false,
     dataType : 'json',
     /*成功した場合の流れ

@@ -6,7 +6,7 @@ $(function () {
 function load_data() {
     const date = new Date();
     const H = date.getHours(), M = date.getMinutes(), S = date.getSeconds(), MS = date.getMilliseconds();
-    $(".time").text(H + 'h' + M + 'min' + S + '.' + (MS % 10) + 'sec');
+    $(".time").text(H + 'h' + M + 'min' + S + Math.floor(MS / 100) + 'sec');
     var val = 0;
     var lim = 0;
     m_limit();
@@ -24,7 +24,7 @@ function load_data() {
 }
 function m_limit() {
     $.ajax({
-        url: './rsc/data.json',
+        url: './../rsc/data.json',
         cache: false,
         dataType: 'json',
         success: function (data) {

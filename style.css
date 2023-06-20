@@ -21,6 +21,18 @@ img{
     object-fit: cover;
 }
 
+#main{
+    color: black;
+    display: block;
+    text-align: center;
+    justify-content: center;
+}
+
+.edit-main{
+    justify-self: center;
+    display:flex;
+}
+
 #index_png img{
     object-position: right 100px bottom 50px;
     border-radius: 20px 30px 50% 10%;

@@ -19,7 +19,7 @@ $(function () {
 function save_data(arg) {
     $.ajax({
         type: 'post',
-        url: './save.php',
+        url: './src/save.php',
         data: arg,
         success: function () {
             alert('データを保存しました。');
@@ -31,7 +31,7 @@ function save_data(arg) {
 }
 function load_json() {
     $.ajax({
-        url: './rsc/data.json',
+        url: './../rsc/data.json',
         cache: false,
         dataType: 'json',
         success: function (data) {
