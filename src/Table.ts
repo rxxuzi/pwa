@@ -4,7 +4,7 @@
  * @version 1.0.0
  */
 
-const refreshInterval = 1000;
+const refreshInterval : number = 1000;
 
 $(function(){
     load_data();
@@ -21,6 +21,7 @@ function load_data(){
             S = date.getSeconds(), //秒
             MS = date.getMilliseconds();//ミリ秒
 
+    //結合
     $(".time").text(H + 'h' + M + 'min' + S + Math.floor(MS/100) + 'sec'); //合体
 
     //valueとlimitの値を取得
