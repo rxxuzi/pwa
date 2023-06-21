@@ -30,9 +30,12 @@ function save_data(arg : { name: string; lim: string; }){
         //try.catch
         success: function(){
         alert('Data saved.');
+        console.log('Data saved.');
         },
         error:function(){
         alert('Failed to save data.');
+        tryCount ++;
+        console.log('Failed to save data. try: ' + tryCount);
         }
     });
 }
@@ -54,6 +57,7 @@ function load_json(){
                 $(".lim").val(node["lim"]);
             }else{
                 alert("false");
+                console.log("false");
             }
         },
         error: function( _data ) {

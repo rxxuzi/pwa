@@ -21,5 +21,7 @@ sleep 1
 
 rm -r run.exe
 
+echo "Finish"
+
 # cd C:/Apache/Apache24/htdocs
 

@@ -23,9 +23,12 @@ function save_data(arg) {
         data: arg,
         success: function () {
             alert('Data saved.');
+            console.log('Data saved.');
         },
         error: function () {
             alert('Failed to save data.');
+            tryCount++;
+            console.log('Failed to save data. try: ' + tryCount);
         }
     });
 }
@@ -42,6 +45,7 @@ function load_json() {
             }
             else {
                 alert("false");
+                console.log("false");
             }
         },
         error: function (_data) {

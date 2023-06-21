@@ -16,4 +16,5 @@ Source code from this link : [src](src/)
 Repository of the original project :
 [experiment-pt1](https://github.com/rxxuzi/experiment-pt1)
 
-Apacheサーバーの起動 -> [run.sh](run.sh)
+Starting the Apache Server -> [run.sh](run.sh)
+!Be sure to check the location of httpd.exe
